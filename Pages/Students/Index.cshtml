@@ -1,0 +1,40 @@
+﻿@page
+@model SbmsCrudOperation02.Pages.Students.IndexModel
+@{
+}
+
+
+<br>
+<h2>List Of Students</h2>
+<a class="btn btn-primary btn-sm" href="/Students/Create">New Student</a>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>StudentID</th>
+            <th>StudentName</th>
+            <th>StudentPhoneNumber</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.ListStudents)
+        {
+            <tr>
+
+                <td>@item.StudentID</td>
+                <td>@item.StudentName</td>
+                <td>@item.StudentPhoneNumber</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Students/Edit?id=@item.StudentID">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Students/Delete?id=@item.StudentID">Delete</a>
+                </td>
+
+            </tr>
+            
+        }
+    </tbody>
+
+</table>
+
+

@@ -1,0 +1,67 @@
+﻿@page
+@model SbmsCrudOperation02.Pages.Students.CreateModel
+@{
+}
+
+
+<br>
+<h2>New Student</h2>
+
+
+@if(Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <Strong>@Model.errorMessage</Strong>
+        <button type="button" typeof="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="POST">
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">StudentID</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="StudentID" value="@Model.students.StudentID">
+        </div>
+    </div>   
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">StudentName</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="StudentName" value="@Model.students.StudentName">
+        </div>
+    </div>   
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">StudentPhoneNumber</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="StudentPhoneNumber" value="@Model.students.StudentPhoneNumber">
+        </div>
+    </div>
+
+
+    @if(Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <Strong>@Model.successMessage</Strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Enter</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+
+
+
+</form>
